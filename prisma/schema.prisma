@@ -19,7 +19,7 @@ model User {
   firstName String?
   lastName  String?
   projects  Project[]
-  Task      Task[]
+  tasks     Task[]
 }
 
 model Project {
@@ -33,8 +33,8 @@ model Project {
   name        String
   description String?
   dueDate     DateTime?
+  tasks       Task[]
   deleted     Boolean   @default(false)
-  Task        Task[]
 
   @@unique([ownerId, name])
   @@index([ownerId, id])
